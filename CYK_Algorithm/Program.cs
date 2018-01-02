@@ -65,7 +65,7 @@ namespace CYK_Algorithm
             return w.IndexOf(x) != -1;
         }
 
-        bool CanGen(int j, int i, Rule r)
+        bool CanGenerate(int j, int i, Rule r)
         {
             for (int k = 1; k <= j - 1; k++)
                 if (Check(r.right[0], table[i, k]))
@@ -81,7 +81,7 @@ namespace CYK_Algorithm
                     foreach (Rule r in rules)
                         if (r.right.Length == 2)
                             if (!Check(r.left, table[i, j]))
-                                if (CanGen(j, i, r)) table[i, j] += r.left;
+                                if (CanGenerate(j, i, r)) table[i, j] += r.left;
         }
 
         public void Parse(string x)
